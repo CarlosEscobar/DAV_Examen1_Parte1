@@ -19,6 +19,9 @@ export class AppComponent implements OnInit {
       "score":1,
       "albumCoverUrl":"https://www.attackmagazine.com/wp-content/uploads/2014/11/artworks-000097027932-szvmrm-t500x500-500x479.jpg",
       "isBought":false,
+      "genre":"Genre1",
+      "releaseDate":"01/01/2001",
+      "description":"Description1",
       "songs":[
         {
           "id":1,
@@ -59,6 +62,9 @@ export class AppComponent implements OnInit {
       "score":2,
       "albumCoverUrl":"https://miro.medium.com/focal/1200/1200/50/40/1*8FkvzbSdSJ4HNxtuZo5kLg.jpeg",
       "isBought":false,
+      "genre":"Genre2",
+      "releaseDate":"02/02/2002",
+      "description":"Description2",
       "songs":[
         {
           "id":1,
@@ -90,6 +96,9 @@ export class AppComponent implements OnInit {
       "score":3,
       "albumCoverUrl":"https://cms-assets.tutsplus.com/uploads/users/114/posts/34296/image/Final-image.jpg",
       "isBought":false,
+      "genre":"Genre3",
+      "releaseDate":"03/03/2003",
+      "description":"Description3",
       "songs":[
         {
           "id":1,

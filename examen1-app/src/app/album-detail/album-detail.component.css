@@ -69,3 +69,10 @@ td, th {
   width: 200px;
   height: 200px;
 }
+
+.informationContainer{
+  border: #264B96 2px solid;
+  border-radius: 3px;
+  width: 300px;
+  padding: 3px;
+}

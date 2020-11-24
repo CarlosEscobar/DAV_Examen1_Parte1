@@ -1,7 +1,7 @@
 <div class="albumDetailContainer">
   <div style="display:flex">
-    <h1>{{selectedAlbum.name}}</h1>
-    <div style="margin-left:750px;">
+    <h1>Title:{{selectedAlbum.name}}</h1>
+    <div style="margin-left:680px;">
       <button class="greyButton" (click)="closeAlbumDetail()">X</button>
     </div>
   </div>
@@ -51,6 +51,20 @@
 
   <button [hidden]="selectedAlbum.isBought" class="greenButton" (click)="onBuyAlbumClick()">{{selectedAlbum.numberToDisplay}}</button>
   <button [hidden]="!selectedAlbum.isBought" class="greyButton">{{selectedAlbum.numberToDisplay}}</button>
+
+  <div class="informationContainer">
+    Artist:{{selectedAlbum.artist}}
+    <br/>
+    Price:{{selectedAlbum.price}}
+    <br/>
+    Duration:{{selectedAlbum.duration}}
+    <br/>
+    Release Date:{{selectedAlbum.releaseDate}}
+    <br/>
+    Genre:{{selectedAlbum.genre}}
+    <br/>
+    Description:{{selectedAlbum.description}}
+  </div>
 
   <h3>Songs</h3>
   <div>
