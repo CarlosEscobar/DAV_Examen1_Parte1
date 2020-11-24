@@ -1,15 +1,71 @@
 .albumDetailContainer{
-  border-left: 5px solid #264B96;
+  border: #264B96 5px solid;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  width: 900px;
+  background-color: #FFFFFF;
 }
 
 .yellowButton{
   background-color: #FFBD06;
-  padding: 5px;
-  margin: 5px;
+  padding: 6px;
+  margin: 6px;
 }
 
 .paleYellowButton{
   background-color: #ffedbc;
+  padding: 6px;
+  margin: 6px;
+}
+
+.greenButton{
   padding: 5px;
   margin: 5px;
+  background-color: #006F3C;
+  color: #FFFFFF;
+  border-color: #006F3C;
+}
+
+.greenButton:hover{
+  background-color: #66A88A;
+}
+
+.greyButton{
+  padding: 5px;
+  margin: 5px;
+  background-color: #525252;
+  color: #FFFFFF;
+  border-color: #525252;
+}
+
+.greyButton:hover{
+  background-color: #A0A0A0;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.myTr{
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.myTr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.albumCover{
+  width: 200px;
+  height: 200px;
 }

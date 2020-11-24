@@ -1,2 +1,50 @@
-<div style="display:flex;">
-</div>
+<td class="myTd">{{id}}</td>
+<td class="myTd">{{name}}</td>
+<td class="myTd">{{artist}}</td>
+<td class="myTd">{{duration}}</td>
+<td class="myTd">
+  <div style="display:flex;">
+
+    <div *ngIf="popularity>1 || popularity==1; else elseBlock1">
+      <button class="yellowButton"></button>
+    </div>
+    <ng-template #elseBlock1>
+      <button class="paleYellowButton"></button>
+    </ng-template>
+
+    <div *ngIf="popularity>2 || popularity==2; else elseBlock2">
+      <button class="yellowButton"></button>
+    </div>
+    <ng-template #elseBlock2>
+      <button class="paleYellowButton"></button>
+    </ng-template>
+
+    <div *ngIf="popularity>3 || popularity==3; else elseBlock3">
+      <button class="yellowButton"></button>
+    </div>
+    <ng-template #elseBlock3>
+      <button class="paleYellowButton"></button>
+    </ng-template>
+
+    <div *ngIf="popularity>4 || popularity==4; else elseBlock4">
+      <button class="yellowButton"></button>
+    </div>
+    <ng-template #elseBlock4>
+      <button class="paleYellowButton"></button>
+    </ng-template>
+
+    <div *ngIf="popularity>5 || popularity==5; else elseBlock5">
+      <button class="yellowButton"></button>
+    </div>
+    <ng-template #elseBlock5>
+      <button class="paleYellowButton"></button>
+    </ng-template>
+
+  </div>
+</td>
+<td class="myTd">
+  <div style="padding:5px;">
+    <button [hidden]="isBought" class="greenButton" (click)="onBuySongClick()">{{price}}</button>
+    <button [hidden]="!isBought" class="greyButton">{{price}}</button>
+  </div>
+</td>

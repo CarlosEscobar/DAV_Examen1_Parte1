@@ -1,0 +1,41 @@
+.myTd{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.yellowButton{
+  background-color: #FFBD06;
+  padding: 6px;
+  margin: 6px;
+}
+
+.paleYellowButton{
+  background-color: #ffedbc;
+  padding: 6px;
+  margin: 6px;
+}
+
+.greenButton{
+  padding: 5px;
+  margin: 5px;
+  background-color: #006F3C;
+  color: #FFFFFF;
+  border-color: #006F3C;
+}
+
+.greenButton:hover{
+  background-color: #66A88A;
+}
+
+.greyButton{
+  padding: 5px;
+  margin: 5px;
+  background-color: #525252;
+  color: #FFFFFF;
+  border-color: #525252;
+}
+
+.greyButton:hover{
+  background-color: #A0A0A0;
+}

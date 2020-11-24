@@ -26,7 +26,8 @@ export class AppComponent implements OnInit {
           "artist":"Artist1",
           "duration":100,
           "popularity":1,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         },
         {
           "id":2,
@@ -34,7 +35,8 @@ export class AppComponent implements OnInit {
           "artist":"Artist1",
           "duration":10,
           "popularity":2,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         },
         {
           "id":3,
@@ -42,7 +44,8 @@ export class AppComponent implements OnInit {
           "artist":"Artist1",
           "duration":1,
           "popularity":3,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         }
       ]
     },
@@ -63,15 +66,17 @@ export class AppComponent implements OnInit {
           "artist":"Artist2",
           "duration":200,
           "popularity":1,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         },
         {
           "id":2,
-          "name":"A1Song2",
+          "name":"A2Song2",
           "artist":"Artist1",
           "duration":20,
           "popularity":2,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         }
       ]
     },
@@ -92,7 +97,8 @@ export class AppComponent implements OnInit {
           "artist":"Artist3",
           "duration":3000,
           "popularity":1,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         },
         {
           "id":2,
@@ -100,7 +106,8 @@ export class AppComponent implements OnInit {
           "artist":"Artist3",
           "duration":300,
           "popularity":2,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         },
         {
           "id":3,
@@ -108,7 +115,8 @@ export class AppComponent implements OnInit {
           "artist":"Artist3",
           "duration":30,
           "popularity":3,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         },
         {
           "id":4,
@@ -116,7 +124,8 @@ export class AppComponent implements OnInit {
           "artist":"Artist3",
           "duration":3,
           "popularity":4,
-          "price":0.99
+          "price":0.99,
+          "isBought":false
         }
       ]
     }
@@ -151,6 +160,10 @@ export class AppComponent implements OnInit {
     if(index != -1){
       this.homeAlbums[index].isBought=true;
       this.homeAlbums[index].numberToDisplay = this.homeAlbums[index].duration + 'm';
+      var songIndex=-1;
+      for(songIndex=0;songIndex<this.homeAlbums[index].songs.length;songIndex++){
+        this.homeAlbums[index].songs[songIndex].isBought=true;
+      }
       this.profileAlbums.push(this.homeAlbums[index]);
     }
   }
@@ -170,6 +183,33 @@ export class AppComponent implements OnInit {
     for(index=0;index<this.homeAlbums.length;index++){
       if(this.homeAlbums[index].id == scoreData.albumId){
         this.homeAlbums[index].score = scoreData.score;
+      }
+    }
+  }
+
+  receiveBuySong(songData: any){
+    var albumIndex=-1;
+    for(albumIndex=0;albumIndex<this.homeAlbums.length;albumIndex++){
+      if(this.homeAlbums[albumIndex].id == songData.albumId){
+        var songIndex=-1;
+        for(songIndex=0;songIndex<this.homeAlbums[albumIndex].songs.length;songIndex++){
+          if(this.homeAlbums[albumIndex].songs[songIndex].id == songData.songId){
+            this.homeAlbums[albumIndex].songs[songIndex].isBought=true;
+          }
+        }
+
+        var allSongsBought=true;
+        for(songIndex=0;songIndex<this.homeAlbums[albumIndex].songs.length;songIndex++){
+          if(this.homeAlbums[albumIndex].songs[songIndex].isBought == false){
+            allSongsBought=false;
+          }
+        }
+
+        if(allSongsBought){
+          this.homeAlbums[albumIndex].isBought=true;
+          this.homeAlbums[albumIndex].numberToDisplay = this.homeAlbums[albumIndex].duration + 'm';
+          this.profileAlbums.push(this.homeAlbums[albumIndex]);
+        }
       }
     }
   }

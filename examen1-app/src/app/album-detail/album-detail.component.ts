@@ -21,8 +21,25 @@ export class AlbumDetailComponent implements OnInit {
     }
   }
 
+  closeAlbumDetail(){
+    document.getElementById("selectedAlbum").style.display = "none";
+  }
+
+  receiveBuySong(id: number){
+    this.sendBuySong.emit({
+      "albumId":this.selectedAlbum.id,
+      "songId":id
+    });
+  }
+
+  onBuyAlbumClick(){
+    this.sendBuyAlbum.emit(this.selectedAlbum.id);
+  }
+
   @Input() selectedAlbum: any;
 
   @Output() sendScore = new EventEmitter<any>();
+  @Output() sendBuyAlbum = new EventEmitter<number>();
+  @Output() sendBuySong = new EventEmitter<any>();
 
 }

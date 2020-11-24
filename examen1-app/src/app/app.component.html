@@ -22,7 +22,9 @@
   </div>
   <div id="selectedAlbum" style="display:none;">
     <app-album-detail [selectedAlbum]="selectedAlbum"
-                      (sendScore)="receiveScore($event)">
+                      (sendScore)="receiveScore($event)"
+                      (sendBuyAlbum)="receiveBuy($event)"
+                      (sendBuySong)="receiveBuySong($event)">
     </app-album-detail>
   </div>
 </div>

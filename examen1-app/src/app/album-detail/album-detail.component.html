@@ -1,5 +1,12 @@
 <div class="albumDetailContainer">
-  <h1>{{selectedAlbum.name}}</h1>
+  <div style="display:flex">
+    <h1>{{selectedAlbum.name}}</h1>
+    <div style="margin-left:750px;">
+      <button class="greyButton" (click)="closeAlbumDetail()">X</button>
+    </div>
+  </div>
+
+  <img src={{selectedAlbum.albumCoverUrl}} class="albumCover" />
 
   <div style="display:flex;">
 
@@ -40,6 +47,32 @@
       <button class="paleYellowButton" (click)="onScoreClick(5);"></button>
     </ng-template>
 
+  </div>
+
+  <button [hidden]="selectedAlbum.isBought" class="greenButton" (click)="onBuyAlbumClick()">{{selectedAlbum.numberToDisplay}}</button>
+  <button [hidden]="!selectedAlbum.isBought" class="greyButton">{{selectedAlbum.numberToDisplay}}</button>
+
+  <h3>Songs</h3>
+  <div>
+    <table>
+      <tr>
+        <th>No.</th>
+        <th>Nombre</th>
+        <th>Artista</th>
+        <th>Duración</th>
+        <th>Popularidad</th>
+        <th>Precio</th>
+      </tr>
+      <app-song-list-item class="myTr" *ngFor="let song of selectedAlbum.songs" [id]="song.id"
+                                                                                [name]="song.name"
+                                                                                [artist]="song.artist"
+                                                                                [duration]="song.duration"
+                                                                                [popularity]="song.popularity"
+                                                                                [price]="song.price"
+                                                                                [isBought]="song.isBought"
+                                                                                (sendBuySong)="receiveBuySong($event)">
+      </app-song-list-item>
+    </table>
   </div>
 
 </div>
