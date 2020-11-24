@@ -204,6 +204,7 @@ export class AppComponent implements OnInit {
         for(songIndex=0;songIndex<this.homeAlbums[albumIndex].songs.length;songIndex++){
           if(this.homeAlbums[albumIndex].songs[songIndex].id == songData.songId){
             this.homeAlbums[albumIndex].songs[songIndex].isBought=true;
+            alert('Canción Comprada');
           }
         }
 
