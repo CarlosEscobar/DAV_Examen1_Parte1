@@ -1,0 +1,9 @@
+<app-album-list-item *ngFor="let album of albums" [id]="album.id"
+                                                  [name]="album.name"
+                                                  [artist]="album.artist"
+                                                  [numberToDisplay]="album.numberToDisplay"
+                                                  [albumCoverUrl]="album.albumCoverUrl"
+                                                  [isBought]="album.isBought"
+                                                  (sendBuy)="receiveBuy($event)"
+                                                  (sendSelect)="receiveSelect($event)">
+</app-album-list-item>

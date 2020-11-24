@@ -1,0 +1,28 @@
+
+<div class="navbarContainer">
+  <div id="navbar1" class="navbarItem" (click)="switchNavbar(1)">
+    Home
+  </div>
+  <div id="navbar2" class="navbarItem" (click)="switchNavbar(2)">
+    Profile
+  </div>
+</div>
+
+<div style="display:flex;">
+  <div id="tab1" style="display:none;">
+    <app-home-page [homeAlbums]="homeAlbums"
+                   (sendBuy)="receiveBuy($event)"
+                   (sendSelect)="receiveSelect($event)">
+    </app-home-page>
+  </div>
+  <div id="tab2" style="display:none;">
+    <app-profile-page [profileAlbums]="profileAlbums"
+                      (sendSelect)="receiveSelect($event)">
+    </app-profile-page>
+  </div>
+  <div id="selectedAlbum" style="display:none;">
+    <app-album-detail [selectedAlbum]="selectedAlbum"
+                      (sendScore)="receiveScore($event)">
+    </app-album-detail>
+  </div>
+</div>

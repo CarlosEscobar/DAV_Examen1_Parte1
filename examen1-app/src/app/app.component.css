@@ -1,0 +1,26 @@
+.navbarContainer{
+  display: flex;
+  border-bottom: 5px solid #0F5837;
+}
+
+.navbarItem{
+  padding: 18px;
+  background-color: #0F5837;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.navbarItem:hover{
+  background-color: #75B095;
+}
+
+.navbarItemActive{
+  padding: 18px;
+  background-color: #0A2E1D;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.navbarItemActive:hover{
+  background-color: #75B095;
+}

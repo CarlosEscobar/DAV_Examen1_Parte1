@@ -1,0 +1,45 @@
+<div class="albumDetailContainer">
+  <h1>{{selectedAlbum.name}}</h1>
+
+  <div style="display:flex;">
+
+    <h3 style="margin:0px;">Score:</h3>
+
+    <div *ngIf="selectedAlbum.score>1 || selectedAlbum.score==1; else elseBlock1">
+      <button class="yellowButton" (click)="onScoreClick(1);"></button>
+    </div>
+    <ng-template #elseBlock1>
+      <button class="paleYellowButton" (click)="onScoreClick(1);"></button>
+    </ng-template>
+
+    <div *ngIf="selectedAlbum.score>2 || selectedAlbum.score==2; else elseBlock2">
+      <button class="yellowButton" (click)="onScoreClick(2);"></button>
+    </div>
+    <ng-template #elseBlock2>
+      <button class="paleYellowButton" (click)="onScoreClick(2);"></button>
+    </ng-template>
+
+    <div *ngIf="selectedAlbum.score>3 || selectedAlbum.score==3; else elseBlock3">
+      <button class="yellowButton" (click)="onScoreClick(3);"></button>
+    </div>
+    <ng-template #elseBlock3>
+      <button class="paleYellowButton" (click)="onScoreClick(3);"></button>
+    </ng-template>
+
+    <div *ngIf="selectedAlbum.score>4 || selectedAlbum.score==4; else elseBlock4">
+      <button class="yellowButton" (click)="onScoreClick(4);"></button>
+    </div>
+    <ng-template #elseBlock4>
+      <button class="paleYellowButton" (click)="onScoreClick(4);"></button>
+    </ng-template>
+
+    <div *ngIf="selectedAlbum.score>5 || selectedAlbum.score==5; else elseBlock5">
+      <button class="yellowButton" (click)="onScoreClick(5);"></button>
+    </div>
+    <ng-template #elseBlock5>
+      <button class="paleYellowButton" (click)="onScoreClick(5);"></button>
+    </ng-template>
+
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="listItemComponent">
+  <div class="contactTitle">
+    <img src={{albumCoverUrl}} class="albumCover" (click)="onAlbumClick()" />
+    <h3>Nombre: {{name}}</h3>
+    <h3>Artista: {{artist}}</h3>
+    <div style="padding:5px;">
+      <button [hidden]="isBought" class="greenButton" (click)="onBuyClick()">{{numberToDisplay}}</button>
+      <button [hidden]="!isBought" class="greyButton">{{numberToDisplay}}</button>
+    </div>
+  </div>
+</div>

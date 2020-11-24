@@ -1,0 +1,6 @@
+<h1>My Albums</h1>
+
+<app-album-list [albums] = profileAlbums
+                (sendBuy)="receiveBuy($event)"
+                (sendSelect)="receiveSelect($event)">
+</app-album-list>
